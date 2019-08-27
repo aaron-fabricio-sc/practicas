@@ -4,63 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="pesoenotros.css">
+    <link rel="stylesheet" href="css/pesoenotros.css">
     <title>Document</title>
 </head>
 <body>
     <div class="cont">
      <h1>tu peso en otros planetas</h1>
-     <p>vamo a agregar nuestro peso</p>
-     <input type="text">
-     <button></button>
+     <p>Agrega tu peso</p>
+     <input type="text" id ="peso">
+     <p>Escoge un planeta: <br> 1 es mercurio <br> 2 venus <br> 3 la luna <br> 4 marte <br> 5 jupiter</p>
+     <input type="text" id="planeta">
+     <button id="boton">Descrubrelo aqui</button>
     <p id="marte" class="pa">Tu peso en </p>
 </div>
      <script>
-         var mercurio = {nombre : 'mercurio', peso: 3.7};
-         var venus = {nombre : 'venus', peso: 8.87};
-         var luna = {nombre:'luna', peso: 1.62};
-         var tierra={nombre:'tierra', peso: 9.8} ;
-         var marte ={nombre:'marte',peso:3.7};
-         var jupiter ={nombre:'jupiter',peso:24.8};
-         var peso_final;
-         var nombreplaneta;
-         var tupeso= parseInt(prompt("pon tu peso real"))
-         var planeta= parseInt(prompt("Escoge un planeta:\n 1 es mercurio \n 2 venus \n 3 la luna \n 4 marte \n 5 jupiter"));
+       var caja_peso = document.getElementById("peso");
+       var caja_planeta=document.getElementById('planeta');
+      var botoncito =document.getElementById('boton');
 
-         if(planeta == 1)
-         {
-             peso_final = tupeso * mercurio.peso / tierra.peso;
-             nombreplaneta = mercurio.nombre;
-          }
-          else if(planeta==2)
-          {
-            peso_final = tupeso * venus.peso / tierra.peso;
-            nombreplaneta = venus.nombre;
 
-          }
-          else if(planeta==3)
-          {
-            peso_final = tupeso * luna.peso / tierra.peso;
-            nombreplaneta = luna.nombre;
+        var tupeso=caja_peso.value  ;
+       
+       var planeta= parseInt(caja_planeta.value);
 
-          }
-          else if(planeta==4)
-          {
-            peso_final = tupeso * marte.peso / tierra.peso;
-            nombreplaneta = marte.nombre;
+      
+      
+      
+       botoncito.addEventListener('click', mostrar);
 
-          }
-          else if(planeta==5)
-          {
-            peso_final = tupeso * jupiter.peso / tierra.peso;
-            nombreplaneta = jupiter.nombre;
 
-          }
+
+
+
+      function mostrar(){
+        alert(tupeso)
+      }
+
+
+
+
+//  var mercurio = {nombre : 'mercurio', peso: 3.7};
+//          var venus = {nombre : 'venus', peso: 8.87};
+//          var luna = {nombre:'luna', peso: 1.62};
+//          var tierra={nombre:'tierra', peso: 9.8} ;
+//          var marte ={nombre:'marte',peso:3.7};
+//          var jupiter ={nombre:'jupiter',peso:24.8};
+
+
+
+
+        // var peso_final;
+        //  var nombreplaneta;
+      
+      
+ 
+        // if(planeta == 1)
+        //  {
+        //      peso_final = tupeso * mercurio.peso / tierra.peso;
+        //      nombreplaneta = mercurio.nombre;
+        //   }
+        //   else if(planeta==2)
+        //   {
+        //     peso_final = tupeso * venus.peso / tierra.peso;
+        //     nombreplaneta = venus.nombre;
+
+        //   }
+        //   else if(planeta==3)
+        //   {
+        //     peso_final = tupeso * luna.peso / tierra.peso;
+        //     nombreplaneta = luna.nombre;
+
+        //   }
+        //   else if(planeta==4)
+        //   {
+        //     peso_final = tupeso * marte.peso / tierra.peso;
+        //     nombreplaneta = marte.nombre;
+
+        //   }
+        //   else if(planeta==5)
+        //   {
+        //     peso_final = tupeso * jupiter.peso / tierra.peso;
+        //     nombreplaneta = jupiter.nombre;
+
+        //   }
+     
+
+       
+     
+
+        //  peso_final= parseInt(peso_final);
         
+        // document.getElementById('marte').innerHTML += " " + nombreplaneta + " es : <strong>" + peso_final + " kilos</strong>";
+        
+        //  var tupeso= parseInt(prompt("pon tu peso real"))
+        //  var planeta= parseInt(prompt("Escoge un planeta:\n 1 es mercurio \n 2 venus \n 3 la luna \n 4 marte \n 5 jupiter"));
 
-         peso_final= parseInt(peso_final);
-
-         document.getElementById('marte').innerHTML += " " + nombreplaneta + " es : <strong>" + peso_final + " kilos</strong>";
+         
      </script>
 </body>
 </html>
