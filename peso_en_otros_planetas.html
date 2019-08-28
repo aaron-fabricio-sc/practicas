@@ -18,86 +18,89 @@
     <p id="marte" class="pa">Tu peso en </p>
 </div>
      <script>
-       var caja_peso = document.getElementById("peso");
+
+
+       var caja = document.getElementById("peso");
        var caja_planeta=document.getElementById('planeta');
       var botoncito =document.getElementById('boton');
 
 
-        var tupeso=caja_peso.value  ;
+
        
-       var planeta= parseInt(caja_planeta.value);
+     
 
       
       
-      
-       botoncito.addEventListener('click', mostrar);
+      botoncito.addEventListener('click', mostrar);
 
 
-
+       var mercurio = {nombre : 'mercurio', peso: 3.7};
+         var venus = {nombre : 'venus', peso: 8.87};
+         var luna = {nombre:'luna', peso: 1.62};
+        var tierra={nombre:'tierra', peso: 9.8} ;
+         var marte ={nombre:'marte',peso:3.7};
+         var jupiter ={nombre:'jupiter',peso:24.8};
 
 
       function mostrar(){
-        alert(tupeso)
+
+
+
+
+
+
+        var tupeso = parseInt(caja.value);
+        var planeta= parseInt(caja_planeta.value)
+
+     
+      
+  
+         var peso_final;
+        var nombreplaneta;
+ 
+         if(planeta == 1)
+          {
+              peso_final = tupeso * mercurio.peso / tierra.peso;
+              nombreplaneta = mercurio.nombre;
+        
+          }
+          else if(planeta==2)
+           {
+             peso_final = tupeso * venus.peso / tierra.peso;
+             nombreplaneta = venus.nombre;
+
+           }
+           else if(planeta==3)
+           {
+             peso_final = tupeso * luna.peso / tierra.peso;
+        nombreplaneta = luna.nombre;
+
+           }
+           else if(planeta==4)
+           {
+             peso_final = tupeso * marte.peso / tierra.peso;
+             nombreplaneta = marte.nombre;
+
+           }
+           else if(planeta==5)
+           {
+             peso_final = tupeso * jupiter.peso / tierra.peso;
+            nombreplaneta = jupiter.nombre;
+
+        }
+
+        
+        peso_final= parseInt(peso_final);
+        
+        document.getElementById('marte').innerHTML += " " + nombreplaneta + " es : <strong>" + peso_final + " kilos</strong>";
+       console.log(nombreplaneta)
       }
 
 
 
-
-//  var mercurio = {nombre : 'mercurio', peso: 3.7};
-//          var venus = {nombre : 'venus', peso: 8.87};
-//          var luna = {nombre:'luna', peso: 1.62};
-//          var tierra={nombre:'tierra', peso: 9.8} ;
-//          var marte ={nombre:'marte',peso:3.7};
-//          var jupiter ={nombre:'jupiter',peso:24.8};
-
-
-
-
-        // var peso_final;
-        //  var nombreplaneta;
-      
-      
- 
-        // if(planeta == 1)
-        //  {
-        //      peso_final = tupeso * mercurio.peso / tierra.peso;
-        //      nombreplaneta = mercurio.nombre;
-        //   }
-        //   else if(planeta==2)
-        //   {
-        //     peso_final = tupeso * venus.peso / tierra.peso;
-        //     nombreplaneta = venus.nombre;
-
-        //   }
-        //   else if(planeta==3)
-        //   {
-        //     peso_final = tupeso * luna.peso / tierra.peso;
-        //     nombreplaneta = luna.nombre;
-
-        //   }
-        //   else if(planeta==4)
-        //   {
-        //     peso_final = tupeso * marte.peso / tierra.peso;
-        //     nombreplaneta = marte.nombre;
-
-        //   }
-        //   else if(planeta==5)
-        //   {
-        //     peso_final = tupeso * jupiter.peso / tierra.peso;
-        //     nombreplaneta = jupiter.nombre;
-
-        //   }
-     
-
-       
-     
-
-        //  peso_final= parseInt(peso_final);
         
-        // document.getElementById('marte').innerHTML += " " + nombreplaneta + " es : <strong>" + peso_final + " kilos</strong>";
-        
-        //  var tupeso= parseInt(prompt("pon tu peso real"))
-        //  var planeta= parseInt(prompt("Escoge un planeta:\n 1 es mercurio \n 2 venus \n 3 la luna \n 4 marte \n 5 jupiter"));
+       //   var tupeso= parseInt(prompt("pon tu peso real"))
+         // var planeta= parseInt(prompt("Escoge un planeta:\n 1 es mercurio \n 2 venus \n 3 la luna \n 4 marte \n 5 jupiter"));
 
          
      </script>
